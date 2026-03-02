@@ -13,10 +13,8 @@ export default function BackgroundMusic() {
         const audio = audioRef.current;
         if (!audio) return;
 
-        // Set initial volume
         audio.volume = 0.4;
-
-        // Handle play state changes
+        
         const onPlay = () => setIsPlaying(true);
         const onPause = () => setIsPlaying(false);
 
@@ -47,7 +45,6 @@ export default function BackgroundMusic() {
 
     return (
         <div className="fixed bottom-6 right-6 z-[60] flex items-center gap-3">
-            {/* Label for interaction cue */}
             <AnimatePresence>
                 {(showLabel || (!isPlaying && !showLabel)) && (
                     <motion.div
@@ -58,7 +55,7 @@ export default function BackgroundMusic() {
                     >
                         {isPlaying ? "Music Playing" : "Click to play Music"}
                     </motion.div>
-                )}
+                )} const audio = audioRef.current;
             </AnimatePresence>
 
             <audio
