@@ -26,8 +26,7 @@ export default function Navbar() {
     <motion.nav
       className={`fixed w-full z-50 top-0 left-0 transition-colors duration-300`}
     >
-      {/* Desktop Navigation */}
-      <ul className="hidden md:flex justify-center gap-4">
+      <ul className="hidden md:flex justify-center items-center gap-10 py-3 px-2 rounded-lg bg-[#251e25] mx-auto my-2 max-w-4xl">
         {navItems.map((item, i) => (
           <motion.li
             key={item.label}
@@ -41,7 +40,7 @@ export default function Navbar() {
             >
               <span className="relative z-10 text-lg">{item.label}</span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute inset-0 bg-[#2b393b] opacity-0 group-hover:opacity-100 transition-opacity"
                 initial={false}
                 whileHover={{ scale: 1.05 }}
               />
@@ -50,7 +49,6 @@ export default function Navbar() {
         ))}
       </ul>
 
-      {/* Mobile menu button */}
       <div className="flex items-center gap-2 md:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -60,8 +58,7 @@ export default function Navbar() {
           {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
         </button>
       </div>
-
-      {/* Mobile Navigation */}
+      
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -96,8 +93,7 @@ export default function Navbar() {
                 </motion.li>
               ))}
             </motion.ul>
-
-            {/* Close hint */}
+            
           </motion.div>
         )}
       </AnimatePresence>
