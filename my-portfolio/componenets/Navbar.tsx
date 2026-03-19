@@ -26,7 +26,7 @@ export default function Navbar() {
     <motion.nav
       className={`fixed w-full z-50 top-0 left-0 transition-colors duration-300`}
     >
-      <ul className="hidden md:flex justify-center items-center gap-10 py-3 px-2 rounded-lg bg-[#251e25] mx-auto my-2 max-w-4xl">
+      <ul className="hidden md:flex justify-center items-center gap-10 py-3 px-2 rounded-lg bg-[#181518] mx-auto my-2 max-w-4xl">
         {navItems.map((item, i) => (
           <motion.li
             key={item.label}
