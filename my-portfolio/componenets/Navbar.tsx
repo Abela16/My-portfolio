@@ -27,7 +27,7 @@ export default function Navbar() {
       className={`fixed w-full z-50 top-0 left-0 transition-colors duration-300`}
     >
       <motion.ul 
-      className="hidden md:flex justify-center items-center gap-10 py-3 px-2 rounded-lg bg-[#181518] mx-auto my-2 max-w-4xl"
+      className="hidden md:flex justify-center items-center gap-10 py-2 rounded-3xl bg-[#181518] mx-auto mt-4 max-w-4xl"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}>

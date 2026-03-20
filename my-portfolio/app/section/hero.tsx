@@ -3,6 +3,9 @@
 import Image from "next/image";
 import ablexPhotp from "@/public/abel_image.jpg"
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Hero(){
     return(
@@ -60,6 +63,29 @@ export default function Hero(){
                         I build web applications using modern technologies. 
                         I enjoy creating efficient and scalable solutions that provide great user experiences.
                     </motion.p>
+                    <div>
+                        <motion.div 
+                            className="flex items-center gap-5 mt-10 text-3xl"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2, duration: 0.5 }}>
+                            <a href="https://github.com/Abela16" target="_blank" className="hover:text-[#01B5D1]">
+                                <FaGithub />
+                            </a>
+                            <a href="https://www.linkedin.com/in/abel-yohanis-9227b7357/" target="_blank" className="hover:text-[#01B5D1]">
+                                <FaLinkedin />
+                            </a>
+                            <a href="abelyohanis016@gmail.com" className="hover:text-[#01B5D1]">
+                                <MdEmail />
+                            </a>
+                            <a href="https://x.com/AbelYohani35308" target="_blank" className="hover:text-[#01B5D1]">
+                                <FaXTwitter />
+                            </a>
+                            <a href="https://t.me/Ablex5" target="_blank" className="hover:text-[#01B5D1]">
+                                <FaTelegram />
+                            </a>
+                        </motion.div>
+                    </div>
                 </div>
                 
             </motion.div>
