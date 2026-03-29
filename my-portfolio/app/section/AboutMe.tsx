@@ -1,20 +1,15 @@
 "use client";
 
 import {motion} from "framer-motion";
-import Image from "next/image";
-import amboLogo from "../../public/ambo_uni_logo.jpeg";
-import udacityLogo from "../../public/udacity.png";
-import {useState} from "react";
+import { Download } from "lucide-react";
 
 
 export default function AboutMe(){
 
-const [activeTab, setActiveTab] = useState("education");
-
 
     return(
         <div id="about" className=" flex flex-col items-center justify-center bg-[#221c22] max-w-[90rem] overflow-hidden w-full mx-auto" >
-                <motion.div
+            <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}w-full
                     viewport={{ once: true, amount: 0.3 }}
@@ -47,72 +42,15 @@ const [activeTab, setActiveTab] = useState("education");
 
             </motion.div>
 
+            <a
+                    href="/ABEL-CV.pdf"
+                    download
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-black text-white font-medium hover:scale-105 transition"
+                    >
+                    <Download size={18} />
+                    Download CV
+            </a>
 
-
-            <div className="flex flex-col justify-center items-center">
-                    <div className="flex gap-10 mb-10 text-xl px-2 py-1 bg-[#142f33] rounded-lg">
-                            <button
-                                className="cursor-pointer hover:text-[#01B5D1] transition-colors duration-300"
-                                onClick={() => setActiveTab("education")}>
-                            Education
-                            </button>
-                    </div>
-                    {activeTab === "education" && (
-                    <motion.div
-                        className="flex flex-col items-center justify-center gap-5 mt-20 text-sm md:text-2xl lg:text-3xl w-max"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.5 }}>
-                        <div className="flex flex-col items-start gap-5 mt-5">
-                            <ul>
-                                <li className="flex mb-5">
-                                    <div className="flex gap-3">
-                                        <div>
-                                            <Image 
-                                            src={amboLogo} alt="Ambo University Logo" 
-                                            className="w-16 h-16 rounded-full mb-2" />
-
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold">
-                                                Ambo University
-                                            </h3>
-                                            <p className="text-sm text-gray-400">
-                                                BSc in Computer Science,
-                                            </p>
-                                        </div>
-                                    </div>
-                                </li>
-                            
-                            <li>
-                                <div className="flex gap-3">
-                                    <div>
-                                        <Image 
-                                        src={udacityLogo} 
-                                        alt="Udacity Logo" 
-                                        className="w-16 h-16 rounded-full mb-2" />
-
-                                    </div>
-                                    <div>
-                                        <h3 className="text-lg font-semibold">
-                                            Udacity
-                                        </h3>
-                                        <p className="text-sm text-gray-400">
-                                            Frontend Web Developer Nanodegree
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            </ul>
-                        </div>
-                    </motion.div> 
-                    )}
-                </div>
-
-
-
-           
-        
         </div>
     )
 }       
