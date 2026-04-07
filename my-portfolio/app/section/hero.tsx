@@ -11,7 +11,7 @@ export default function Hero(){
       <div id="home"
       className="relative min-h-screen flex flex-col items-center justify-center px-5 overflow-hidden" >
             <div 
-                className="flex flex-col md:flex-row items-center gap-8 md:gap-20 rounded-2xl px-6 md:px-12 lg:px-20 py-10 md:py-20 bg-[#221c22] max-w-[90rem] w-full">
+                className="flex flex-col md:flex-row items-center gap-8 md:gap-20 rounded-2xl px-6 md:px-12 lg:px-20 py-10 md:py-20 bg-[#151131] max-w-[90rem] w-full">
                 <div>
                     <motion.div
                         className="overflow-hidden mt-10 md:mt-0"
@@ -33,7 +33,7 @@ export default function Hero(){
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.4 }}
                         >
-                        HELLO I'M
+                        HELLO I&apos;M
                     </motion.p> 
                     <motion.h1
                         className="font-bold text-2xl md:text-5xl lg:text-7xl text-[#01B5D1]"

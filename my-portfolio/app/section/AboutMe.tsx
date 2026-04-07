@@ -12,7 +12,7 @@ export default function AboutMe(){
         <div id="about" className="flex flex-col items-center justify-center overflow-hidden w-full " >
             <motion.div
                     initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}w-full
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8, delay: 0.7 }}
                     className="  px-2 md:px-3 lg:px-5 py-5 md:py-10"
@@ -32,7 +32,7 @@ export default function AboutMe(){
                             transition={{ delay: 0.3, duration: 0.5 }}
                             >
                             <p>
-                                I'm Abel a full-stack developer focused on building scalable, user-centered web applications. I specialize in developing clean, maintainable code across both frontend and backend systems.
+                                I&apos;m Abel a full-stack developer focused on building scalable, user-centered web applications. I specialize in developing clean, maintainable code across both frontend and backend systems.
                             </p>
 
                             <p>
@@ -49,7 +49,7 @@ export default function AboutMe(){
                     className="text-sm md:text-2xl font-bold bg-[#151131] px-4 py-6 md:px-10 md:py-15 rounded-xl text-center w-full sm:w-auto"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{duration: 0.5 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
                     whileHover={{ scale: 1.08, y: -5 }}
                     whileTap={{ scale: 0.95 }}>
 
@@ -63,7 +63,7 @@ export default function AboutMe(){
                     className="text-sm md:text-2xl font-bold bg-[#151131] px-4 py-6 md:px-10 md:py-15 rounded-xl text-center w-full sm:w-auto "
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{duration: 0.5 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
                     whileHover={{ scale: 1.08, y: -5 }}
                     whileTap={{ scale: 0.95 }}>
 
@@ -75,7 +75,7 @@ export default function AboutMe(){
                     className="text-sm md:text-2xl font-bold bg-[#151131] px-4 py-6 md:px-10 md:py-15 rounded-xl text-center w-full sm:w-auto"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{duration: 0.5 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
                     whileHover={{ scale: 1.08, y: -5 }}
                     whileTap={{ scale: 0.95 }}>
 
@@ -86,7 +86,7 @@ export default function AboutMe(){
                 </motion.div>
             </div>
             
-                <div className="text-center">
+                <div className="text-center gap-4 flex flex-col md:flex-row justify-center items-center">
                     <a
                         href="/ABEL-CV.pdf"
                         download
@@ -94,6 +94,11 @@ export default function AboutMe(){
                         >
                         <Download size={18} />
                         Download CV
+                    </a>
+                    <a
+                        className="inline-flex items-center gap-2 px-6 py-3 mt-10 rounded-2xl bg-[#151131] text-white font-medium hover:scale-105 transition "
+                        >
+                        Let&apos;s connect
                     </a>
                 </div>
 
