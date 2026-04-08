@@ -3,6 +3,7 @@ import Navbar from "@/componenets/Navbar";
 import Hero from "@/app/section/hero";
 import AboutMe from "./section/AboutMe";
 import Projects from "./section/Projects";
+import Skills from "./section/Skills";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           <AboutMe />
         </section>
         <Projects />
+        <Skills />
       <BackgroundMusic />
     </main>
     </>
