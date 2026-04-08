@@ -1,5 +1,5 @@
-import BackgroundMusic from "@/componenets/backgroundMusic";
 import Navbar from "@/componenets/Navbar";
+import Footer from "@/componenets/Footer";
 import Hero from "@/app/section/hero";
 import AboutMe from "./section/AboutMe";
 import Projects from "./section/Projects";
@@ -30,9 +30,8 @@ export default function Home() {
             <section className="scroll-mt-24">
               <Contact />
             </section>
-
-            <BackgroundMusic />
     </main>
+    <Footer />
     </>
   );
 }

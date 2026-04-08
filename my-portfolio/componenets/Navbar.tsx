@@ -25,13 +25,25 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className={`fixed w-full z-50 top-0 left-0 transition-colors duration-300`}
+      className="fixed left-0 top-0 z-50 w-full transition-colors duration-300"
     >
-      <motion.ul 
-      className="hidden md:flex justify-center items-center gap-10 py-2 rounded-3xl bg-[#181518] mx-auto mt-4 max-w-4xl"
+      {/* Mobile: same tone as desktop bar, semi-transparent + blur */}
+      <div className="flex items-center justify-end border-b border-white/[0.06] bg-[#181518]/55 px-4 py-3 backdrop-blur-xl md:hidden">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="rounded-md p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+        </button>
+      </div>
+
+      <motion.ul
+        className="mx-auto mt-4 hidden max-w-4xl items-center justify-center gap-10 rounded-3xl border border-white/[0.08] bg-[#1c192e] py-2 shadow-lg shadow-black/20 backdrop-blur-xl md:flex"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}>
+        transition={{ delay: 0.3, duration: 0.5 }}
+      >
         {navItems.map((item, i) => (
           <motion.li
             key={item.label}
@@ -54,27 +66,17 @@ export default function Navbar() {
         ))}
       </motion.ul>
 
-      <div className="flex items-center gap-2 md:hidden">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-foreground p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
-        </button>
-      </div>
-      
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 top-16 bg-background/95 backdrop-blur-lg md:hidden"
+            className="fixed inset-0 top-14 bg-background/90 backdrop-blur-xl md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
             <motion.ul
-              className="flex flex-col items-center justify-center bg-background/95 backdrop-blur-lg  h-screen gap-6 py-10"
+              className="flex h-[calc(100dvh-3.5rem)] flex-col items-center justify-center gap-6 bg-background/90 py-10 backdrop-blur-xl"
               initial={{ y: -20 }}
               animate={{ y: 0 }}
               exit={{ y: -20 }}
