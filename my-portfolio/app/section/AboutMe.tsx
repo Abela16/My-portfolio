@@ -34,9 +34,6 @@ export default function AboutMe(){
               className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start"
             >
               <motion.div variants={fadeUp} className="space-y-4">
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
-                  About
-                </p>
                 <h2 className="text-3xl font-bold text-foreground md:text-6xl">
                   About <span className="text-accent">Me</span>
                 </h2>

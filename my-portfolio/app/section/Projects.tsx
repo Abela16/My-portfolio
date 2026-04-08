@@ -48,7 +48,7 @@ export default function Projects() {
           </h2>
         </motion.div>
 
-        {/* Responsive card grid with stagger */}
+        {/* Single grid — status is shown on each card */}
         <motion.div
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
           variants={sectionVariants}

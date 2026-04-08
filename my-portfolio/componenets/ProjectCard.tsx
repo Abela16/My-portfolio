@@ -18,8 +18,12 @@ export const cardVariants: Variants = {
   },
 };
 
+function statusLabel(status: Project["status"]) {
+  return status === "completed" ? "Completed" : "In progress";
+}
+
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const { title, description, image, techStack, featured, demoUrl, githubUrl } =
+  const { title, description, image, techStack, featured, demoUrl, githubUrl, status } =
     project;
 
   const primaryLink = demoUrl ?? githubUrl;
@@ -54,6 +58,25 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             Featured
           </span>
         )}
+
+        {/* Status pill */}
+        <span
+          className={[
+            "absolute bottom-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest backdrop-blur-sm",
+            status === "completed"
+              ? "border-accent/35 bg-card/85 text-foreground"
+              : "border-border-subtle bg-card/85 text-muted-foreground",
+          ].join(" ")}
+        >
+          <span
+            className={[
+              "h-1.5 w-1.5 rounded-full",
+              status === "completed" ? "bg-accent" : "bg-muted-foreground/70",
+            ].join(" ")}
+            aria-hidden
+          />
+          {statusLabel(status)}
+        </span>
 
         {/* Quick-action icon links that appear on hover */}
         <div className="absolute top-3 right-3 z-10 flex gap-2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
