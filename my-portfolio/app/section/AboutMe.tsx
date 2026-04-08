@@ -9,7 +9,7 @@ export default function AboutMe(){
 
 
     return(
-        <div id="about" className="flex flex-col items-center justify-center overflow-hidden w-full " >
+        <div className="flex flex-col items-center justify-center overflow-hidden w-full " >
             <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}

@@ -8,7 +8,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Hero(){
     return(
-      <div id="home"
+      <div
       className="relative min-h-screen flex flex-col items-center justify-center px-5 overflow-hidden" >
             <div 
                 className="flex flex-col md:flex-row items-center gap-8 md:gap-20 rounded-2xl px-6 md:px-12 lg:px-20 py-10 md:py-20 bg-[#151131] max-w-[90rem] w-full">
