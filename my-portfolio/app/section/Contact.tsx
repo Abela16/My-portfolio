@@ -78,16 +78,12 @@ export default function Contact() {
           viewport={{ once: true, amount: 0.35 }}
           className="mb-12 text-center"
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">05.</p>
           <div className="mt-3 flex items-center justify-center gap-4">
             <h2 className="text-3xl font-bold text-foreground md:text-6xl">
               Contact <span className="text-accent">Me</span>
             </h2>
             <span className="hidden h-px w-28 bg-border-subtle/70 md:block" />
           </div>
-          <p className="mt-4 mx-auto max-w-2xl text-sm leading-7 text-muted-foreground md:text-base">
-            I&apos;m currently open to new opportunities.
-          </p>
         </motion.div>
 
         <motion.div

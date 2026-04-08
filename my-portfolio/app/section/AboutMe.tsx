@@ -1,108 +1,132 @@
 "use client";
 
-import {motion} from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Download } from "lucide-react";
 import { Globe, Monitor, Server } from "lucide-react";
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 22 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" as const },
+  },
+};
+
+const container: Variants = {
+  hidden: {},
+  visible: { transition: { when: "beforeChildren", staggerChildren: 0.1 } },
+};
 
 
 export default function AboutMe(){
 
 
     return(
-        <div className="flex flex-col items-center justify-center overflow-hidden w-full " >
+        <div className="w-full overflow-hidden">
+          <div className="mx-auto max-w-7xl px-5">
+            {/* Header + bio card */}
             <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.8, delay: 0.7 }}
-                    className="  px-2 md:px-3 lg:px-5 py-5 md:py-10"
-                    >
-                        <motion.h2
-                            className="text-3xl md:text-8xl font-bold ml-4 text-[#01B5D1] mb-2"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2, duration: 0.5 }}
-                            >
-                            About Me
-                        </motion.h2>
-                        <motion.p
-                            className="md:text-xl max-w-4xl mx-auto text-base leading-relaxed text-justify space-y-4 p-7"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3, duration: 0.5 }}
-                            >
-                            <p>
-                                I&apos;m Abel a full-stack developer focused on building scalable, user-centered web applications. I specialize in developing clean, maintainable code across both frontend and backend systems.
-                            </p>
+              variants={container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+              className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start"
+            >
+              <motion.div variants={fadeUp} className="space-y-4">
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
+                  About
+                </p>
+                <h2 className="text-3xl font-bold text-foreground md:text-6xl">
+                  About <span className="text-accent">Me</span>
+                </h2>
+                <p className="max-w-xl text-sm leading-7 text-muted-foreground md:text-base">
+                  I build scalable, user-centered web applications with a strong focus on clean UI,
+                  maintainable code, and reliable backend systems.
+                </p>
+              </motion.div>
 
-                            <p>
-                                On the frontend, I work primarily with React and Next.js to create responsive, intuitive interfaces. On the backend, I use Node.js and Express to design efficient, reliable APIs and application logic.
-                            </p>
-                            
-                            
-                    </motion.p> 
-
+              <motion.div
+                variants={fadeUp}
+                className="rounded-2xl border border-border-subtle bg-card/60 p-6 backdrop-blur-sm shadow-sm md:p-8"
+              >
+                <div className="space-y-4 text-sm leading-7 text-muted-foreground md:text-base">
+                  <p>
+                    I&apos;m Abel, a full-stack developer focused on building scalable, user-centered web applications.
+                    I specialize in developing clean, maintainable code across both frontend and backend systems.
+                  </p>
+                  <p>
+                    On the frontend, I work primarily with React and Next.js to create responsive, intuitive interfaces.
+                    On the backend, I use Node.js and Express to design efficient, reliable APIs and application logic.
+                  </p>
+                </div>
+              </motion.div>
             </motion.div>
 
-            <div className="flex flex-wrap justify-center gap-4">
-                <motion.div 
-                    className="text-sm md:text-2xl font-bold bg-[#151131] px-4 py-6 md:px-10 md:py-15 rounded-xl text-center w-full sm:w-auto"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.5 }}
-                    whileHover={{ scale: 1.08, y: -5 }}
-                    whileTap={{ scale: 0.95 }}>
-
-                    <Globe size={32} className="mb-3 text-[#01B5D1]" />
-                
-
-                    Web Developer
+            {/* Role cards */}
+            <motion.div
+              variants={container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+              className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {[
+                { Icon: Globe, label: "Web Developer" },
+                { Icon: Monitor, label: "Frontend Developer" },
+                { Icon: Server, label: "Backend Developer" },
+              ].map(({ Icon, label }) => (
+                <motion.div
+                  key={label}
+                  variants={fadeUp}
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  transition={{ duration: 0.18, ease: "easeOut" as const }}
+                  className="rounded-2xl border border-border-subtle bg-card/60 p-6 text-left backdrop-blur-sm shadow-sm
+                             hover:border-accent/35 hover:shadow-[0_0_30px_rgba(1,181,209,0.10)] transition-[border-color,box-shadow]"
+                >
+                  <Icon size={26} className="text-accent" />
+                  <p className="mt-3 text-base font-semibold text-foreground">{label}</p>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    Focused on building polished, responsive experiences with production-ready code quality.
+                  </p>
                 </motion.div>
+              ))}
+            </motion.div>
 
-                <motion.div 
-                    className="text-sm md:text-2xl font-bold bg-[#151131] px-4 py-6 md:px-10 md:py-15 rounded-xl text-center w-full sm:w-auto "
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.5 }}
-                    whileHover={{ scale: 1.08, y: -5 }}
-                    whileTap={{ scale: 0.95 }}>
-
-                    <Monitor size={32} className="mb-3 text-[#01B5D1]" />
-
-                    Frontend developer
-                </motion.div>
-                <motion.div 
-                    className="text-sm md:text-2xl font-bold bg-[#151131] px-4 py-6 md:px-10 md:py-15 rounded-xl text-center w-full sm:w-auto"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.5 }}
-                    whileHover={{ scale: 1.08, y: -5 }}
-                    whileTap={{ scale: 0.95 }}>
-
-                    <Server size={32} className="mb-3 text-[#01B5D1]" />
-
-                        
-                    Backed develpoer 
-                </motion.div>
-            </div>
-            
-                <div className="text-center gap-4 flex flex-col md:flex-row justify-center items-center">
-                    <a
-                        href="/ABEL-CV.pdf"
-                        download
-                        className="inline-flex items-center gap-2 px-6 py-3 mt-10 rounded-2xl bg-[#151131] text-white font-medium hover:scale-105 transition "
-                        >
-                        <Download size={18} />
-                        Download CV
-                    </a>
-                    <a
-                        className="inline-flex items-center gap-2 px-6 py-3 mt-10 rounded-2xl bg-[#151131] text-white font-medium hover:scale-105 transition "
-                        >
-                        Let&apos;s connect
-                    </a>
-                </div>
-
-
+            {/* CTAs */}
+            <motion.div
+              variants={container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.35 }}
+              className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            >
+              <motion.a
+                variants={fadeUp}
+                href="/ABEL-CV.pdf"
+                download
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.18, ease: "easeOut" as const }}
+                className="inline-flex items-center gap-2 rounded-2xl bg-card px-6 py-3 text-sm font-semibold text-foreground
+                           border border-border-subtle hover:border-accent/35 hover:shadow-[0_0_30px_rgba(1,181,209,0.12)] transition-[border-color,box-shadow]"
+              >
+                <Download size={18} className="text-accent" />
+                Download CV
+              </motion.a>
+              <motion.a
+                variants={fadeUp}
+                href="#contact"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.18, ease: "easeOut" as const }}
+                className="inline-flex items-center gap-2 rounded-2xl bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground
+                           shadow-sm shadow-accent/10 hover:shadow-[0_0_32px_rgba(1,181,209,0.18)] transition-[box-shadow]"
+              >
+                Let&apos;s connect
+              </motion.a>
+            </motion.div>
+          </div>
         </div>
     )
 }       
