@@ -43,8 +43,9 @@ export const projects: Project[] = [
       "The Anonymous Campus Feedback Portal is a simple web application that allows students to submit feedback about their campus anonymously. It helps campuses collect honest opinions, complaints, suggestions, and ideas without revealing the identity of the student.",
     image: "anonymous_Campus_Feedback_Portal.png",
     status: "completed",
-    techStack: ["react.js", "Tailwind CSS"],
-    githubUrl: "https://github.com/Abela16/A_C_F_P",
+    techStack: ["react.js", "Tailwind CSS", "typescript"],
+    demoUrl: "https://acfp-gamma.vercel.app/",
+    githubUrl: "https://github.com/Abela16/ACFP",
   },
   {
     id: 4,
@@ -53,7 +54,7 @@ export const projects: Project[] = [
       "Full-stack MERN e-commerce application with authentication, product management, and order system.Completed (Backend)REST API built with Node.js & Express. MongoDB database integration.",
     image: "/Merkato_Image.jpeg",
     status: "in-progress",
-    techStack: ["react.js", "Tailwind CSS"],
+    techStack: ["react.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
     githubUrl: "https://github.com/Abela16/Mercato",
   },
 ];
